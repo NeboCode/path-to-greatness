@@ -1,4 +1,6 @@
+///////////////////////////////////////////////////
 // Function constructor
+///////////////////////////////////////////////////
 
 // var john = {
 //     name: 'John',
@@ -28,8 +30,10 @@
 // console.log(john.lastName);
 // jane.lastName;
 
-// Object.create
 
+///////////////////////////////////////////////////
+// Object.create
+///////////////////////////////////////////////////
 
 // var personProto = {
 //     calculateAge: function() {
@@ -49,8 +53,9 @@
 //     job: {value: 'Online Tutor'}
 // });
 
-
+///////////////////////////////////////////////////
 // Primites Vs Objects
+///////////////////////////////////////////////////
 
 // var a = 23;
 // var b = a;
@@ -92,8 +97,10 @@
 // console.log(age);
 // console.log(obj.city);
 
-
+///////////////////////////////////////////////////
 // FUNCTIONS - Passing functions as arguments
+///////////////////////////////////////////////////
+
 
 // var years = [2007, 1991, 1994, 1995, 1998];
 
@@ -126,8 +133,11 @@
 
 // console.log(maxHeart);
 
-// Functions - FUNCTIONS RETURNING FUNCTIONS
 
+
+///////////////////////////////////////////////////
+// Functions - FUNCTIONS RETURNING FUNCTIONS
+///////////////////////////////////////////////////
 
 // function interviewQuestion(job) {
 //     if (job === 'designer') {
@@ -158,8 +168,10 @@
 // interviewQuestion('teacher')('Mark');
 
 
-
+///////////////////////////////////////////////////
 // Immediately Invoked Function Expressions (IIFE)
+///////////////////////////////////////////////////
+
 
 // function game() {
 //     var score = Math.random() * 10;
@@ -168,13 +180,82 @@
 
 // game();
 
-(function() {
-    var score = Math.random() * 10;
-    console.log(score >= 5);
-}
-)();
+// (function() {
+//     var score = Math.random() * 10;
+//     console.log(score >= 5);
+// }
+// )();
 
-(function (goodLuck) {
-    var score = Math.random() * 10;
-    console.log(score >= 5 - goodLuck);
-})(5);
+// (function (goodLuck) {
+//     var score = Math.random() * 10;
+//     console.log(score >= 5 - goodLuck);
+// })(5);
+
+
+
+///////////////////////////////////////////////////
+// Closures (important)
+// Definition: An inner function has always access to
+// the variables and parameteres of its outer function
+// even after the outer function has returned.
+///////////////////////////////////////////////////
+
+// function retirement(retirementAge) {
+//     return function(yearOfBirth) {
+//         var age = 2019 - yearOfBirth;
+//         var a = ' years left until retirement.';
+//         console.log((retirementAge - age) + a);
+
+//     }
+// }
+
+// var retirementUS = retirement(66);
+// var retirementGermany = retirement(65);
+
+// var retirementIceland = retirement(67);
+// retirementGermany(1990);
+// retirementIceland(1990);
+// retirementUS(1990);
+
+
+// retirement(66)(1990);
+
+// function interviewQuestion(job) {
+//     return function(name) {
+//         if (job === 'designer') {
+//             console.log(name + ', can you please explain what UX design is?');
+//         }  else if (job === 'teacher') {
+//             console.log('What subject do you teach? ' + name);
+//         } else {
+//             console.log('Hello ' + name + ', what do you do?');
+
+//         }
+//     }
+// }
+
+// interviewQuestion('teacher')('John');
+// function interviewQuestion(job) {
+//     if (job === 'designer') {
+//         return function(name) {
+//             console.log(name + ', can you please explain what UX design is?');
+//         }
+//     } else if (job === 'teacher') {
+//         return function(name) {
+//             console.log(name + ', what subject do you teach?');
+//         }
+//     }
+//     else {
+//         return function(name) {
+//             console.log('Hello, '+ name +', what do you do?');
+//         }
+//     }
+// }
+
+// var teacherQuestion = interviewQuestion('teacher');
+// var designerQuestion = interviewQuestion('designer');
+
+
+// teacherQuestion('John');
+// designerQuestion('John');
+// designerQuestion('Mark');
+// designerQuestion('Claire');
