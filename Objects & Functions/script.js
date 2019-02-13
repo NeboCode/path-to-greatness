@@ -316,27 +316,65 @@
 
 // Example on previous lesson
 
-var years = [2007, 1991, 1994, 1995, 1998];
+// var years = [2007, 1991, 1994, 1995, 1998];
 
-function arrayCalc(arr, fn) {
-    var arrRes = [];
-    for (var i = 0; i < arr.length; i++) {
-        arrRes.push(fn(arr[i]));
-    }
-    return arrRes;
-}
+// function arrayCalc(arr, fn) {
+//     var arrRes = [];
+//     for (var i = 0; i < arr.length; i++) {
+//         arrRes.push(fn(arr[i]));
+//     }
+//     return arrRes;
+// }
 
 
-function calculateAge(el) {
-    return 2019 - el;
-}
-function isFullAge(limit, el) {
-    return el >= limit;
-}
+// function calculateAge(el) {
+//     return 2019 - el;
+// }
+// function isFullAge(limit, el) {
+//     return el >= limit;
+// }
 
-var ages = arrayCalc(years, calculateAge);
+// var ages = arrayCalc(years, calculateAge);
 
-var fullJapan = arrayCalc(ages, isFullAge.bind(this, 20));
+// var fullJapan = arrayCalc(ages, isFullAge.bind(this, 20));
 
-console.log(ages);
-console.log(fullJapan);
+// console.log(ages);
+// console.log(fullJapan);
+
+
+////////////////////////////////////////////////////////////
+// My solution to the coding challenge 7
+////////////////////////////////////////////////////////////
+
+
+// var questions = [];
+
+// var Question = function Question(quest,choices,answer) {
+
+//     var question = {
+//         question: quest,
+//         options: choices,
+//         answer: answer
+//     };
+
+//     questions.push(question);
+// }
+
+// Question('Do you like pizza?', ['Yes', 'No'], 0);
+// Question('Is Shone amazing?', ['Yes', 'No'], 0);
+// Question('Do you like pasta?', ['Yes', 'No'], 1);
+// Question('Is Shone awesome?', ['Yes', 'No'], 0);
+
+
+// var randomQuestion = Math.floor(Math.random()*questions.length);
+// console.log(questions[randomQuestion].question);
+// console.log('1. ' + questions[randomQuestion].options[0]);
+// console.log('2. ' + questions[randomQuestion].options[1]);
+
+//     var answered = prompt('Please type the answer:');
+//     if (questions[randomQuestion].answer !== answered - 1) {
+//         console.log('Wrong!');
+//     } else if (questions[randomQuestion].answer === answered - 1) {
+//         console.log('Correct!');
+//     }
+
